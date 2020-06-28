@@ -1,0 +1,18 @@
+<h2 class="title">{{ list.title }}</h2>
+
+<div class="container">
+  <app-trello-card
+    cdkDrag
+    class="card"
+    *ngFor="let card of list.cards; let index = index"
+    index="{{ index }}"
+    listID="{{ list.id }}"
+    [card]="card">
+  </app-trello-card>
+</div>
+
+<app-trello-action-button
+  *ngIf="handleShowActionButton(list.title)"
+  listID="{{ list.id }}"
+  cardsLength="{{ list.cards.length }}">
+</app-trello-action-button>

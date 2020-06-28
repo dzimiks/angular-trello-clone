@@ -1,0 +1,74 @@
+<div class="root">
+  <button
+    mat-button
+    class="close-button"
+    (click)="onClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div mat-dialog-content class="container">
+    <mat-form-field class="input-field">
+      <mat-label>Title</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Enter a card title"
+        [formControl]="titleFormControl"
+        [errorStateMatcher]="errorMatcher"
+        value="{{ data.title }}"
+        (input)="onInputChange('title', $event.target.value)">
+      <mat-error *ngIf="titleFormControl.hasError('required')">
+        Enter a card title!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="textarea">
+      <mat-label>Text</mat-label>
+      <textarea
+        matInput
+        placeholder="Enter a card text"
+        [formControl]="textFormControl"
+        [errorStateMatcher]="errorMatcher"
+        value="{{ data.text }}"
+        (input)="onInputChange('text', $event.target.value)"
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="10"></textarea>
+      <mat-error *ngIf="textFormControl.hasError('required')">
+        Enter a card text!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions class="modal-buttons">
+    <button
+      mat-button
+      class="btn"
+      color="warn"
+      [disabled]="handleDisableDeleteButton()"
+      (click)="handleDeleteCard()">
+      <mat-icon>delete</mat-icon>
+      Delete
+    </button>
+
+    <div>
+      <button
+        mat-button
+        class="btn"
+        (click)="onClose()">
+        <mat-icon>cancel</mat-icon>
+        Cancel
+      </button>
+
+      <button
+        mat-button
+        class="btn"
+        color="primary"
+        [disabled]="handleDisableSaveButton()"
+        (click)="handleModalAction()">
+        <mat-icon>save</mat-icon>
+        Save
+      </button>
+    </div>
+  </div>
+</div>

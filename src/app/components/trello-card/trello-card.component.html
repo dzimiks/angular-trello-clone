@@ -1,0 +1,24 @@
+<mat-card class="root">
+  <mat-card-title>{{ card.title }}</mat-card-title>
+  <mat-card-content>{{ getText() }}</mat-card-content>
+
+  <mat-card-actions class="buttons">
+    <button
+      class="btn"
+      mat-button
+      color="primary"
+      (click)="updateCard()">
+      <mat-icon>edit</mat-icon>
+      Edit
+    </button>
+
+    <button
+      class="btn"
+      mat-button
+      color="warn"
+      (click)="deleteCard()">
+      <mat-icon>delete</mat-icon>
+      Delete
+    </button>
+  </mat-card-actions>
+</mat-card>

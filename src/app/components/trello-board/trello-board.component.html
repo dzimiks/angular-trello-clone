@@ -1,0 +1,14 @@
+<div class="container">
+  <div
+    cdkDropListGroup
+    class="row">
+    <app-trello-list
+      cdkDropList
+      class="list"
+      *ngFor="let list of (board | async).lists"
+      [cdkDropListData]="list"
+      (cdkDropListDropped)="drop($event)"
+      [list]="list">
+    </app-trello-list>
+  </div>
+</div>
