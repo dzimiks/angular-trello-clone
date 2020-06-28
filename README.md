@@ -1,6 +1,6 @@
 # Angular Trello Clone
 
-A small Trello clone built with Angular Material UI and Redux. This project was a part of [Grid Dynamics](https://www.griddynamics.com) internship.
+A small Trello clone built with Angular Material UI and NgRx. This project was a part of [Grid Dynamics](https://www.griddynamics.com) internship.
 
 ## Usage
 
